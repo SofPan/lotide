@@ -18,14 +18,18 @@ const oneElement = [1];
 tail(words);
 assertEqual(words.length, 3);
 
-// passing test cases
+// Test that the array is the correct length
 assertEqual(words.length - 1, tail(words).length);
+// Test that the first index of the tail array is correct
 assertEqual("wordy", tail(words)[0]);
+// Test another index of the tail array is correct
 assertEqual("wordiest", tail(words)[1]);
+// Test for an empty array when expected
 assertEqual(0, tail(empty).length);
 assertEqual(0, tail(oneElement).length);
 
-// failing test cases
+// Test that the wrong index was not pulled in
 assertEqual(tail(words)[0], "word");
+// Test that the array not too long
 assertEqual(tail(words).length, 3);
 
