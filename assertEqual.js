@@ -1,12 +1,12 @@
 const assertEqual = (actual, expected) => {
-  return actual === expected ? `💅 Assertion passed: ${actual} === ${expected}`
-    : `💔 Assertion failed: ${actual} !== ${expected}`;
+  console.log(actual === expected ? `💅 Assertion passed: ${actual} === ${expected}`
+    : `💔 Assertion failed: ${actual} !== ${expected}`);
 };
 
 // Tests
-console.log(assertEqual("Lighthouse Labs", "Bootcamp"));
-console.log(assertEqual(1, 1));
-console.log(assertEqual("Sofia Panchaud", "Sofia Panchaud"));
-console.log(assertEqual("SOFIA", "Sofia"));
-console.log(assertEqual(1 + 1, 2));
-console.log(assertEqual(20 + 5, 100));
+assertEqual("Lighthouse Labs", "Bootcamp");
+assertEqual(1, 1);
+assertEqual("Sofia Panchaud", "Sofia Panchaud");
+assertEqual("SOFIA", "Sofia");
+assertEqual(1 + 1, 2);
+assertEqual(20 + 5, 100);
