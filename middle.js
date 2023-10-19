@@ -23,11 +23,18 @@ const middle = (arr) => {
     return [];
   } else if (arr.length % 2 === 0) {
     // extract middle two elements if even
+    return [arr[midPoint - 1], arr[midPoint]];
   } else {
-    return [arr[midPoint]];
     // extract single middle element if odd
+    return [arr[midPoint]];
   }
-
 };
 
-console.log(middle([1, 2, 3, 4, 5]));
+// Odd
+assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
+// Even
+assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
+// Too few
+assertArraysEqual(middle([1, 2]), []);
+// Empty
+assertArraysEqual(middle([]), []);
