@@ -16,17 +16,25 @@ const assertArraysEqual = (arr1, arr2) => {
   console.log(eqArrays(arr1, arr2) ? `💅 Assertion passed: ${arr1} === ${arr2}` : `💔 Assertion failed: ${arr1} !== ${arr2}`);
 };
 
+// Find the middle elements if array has even length
+const getMiddleElementsForEvenArray = (arr, midPoint) => {
+  return [arr[midPoint - 1], arr[midPoint]];
+};
+
+// Find the middle element if array has odd length
+const getMiddleElementForOddArray = (arr, midPoint) => {
+  return [arr[midPoint]];
+};
+
 // A function that returns the middle element(s) of an array as a new array
 const middle = (arr) => {
   const midPoint = Math.floor(arr.length / 2);
   if (arr.length < 3) {
     return [];
   } else if (arr.length % 2 === 0) {
-    // extract middle two elements if even
-    return [arr[midPoint - 1], arr[midPoint]];
+    return getMiddleElementsForEvenArray(arr, midPoint);
   } else {
-    // extract single middle element if odd
-    return [arr[midPoint]];
+    return getMiddleElementForOddArray(arr, midPoint);
   }
 };
 
