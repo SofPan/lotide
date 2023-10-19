@@ -18,11 +18,13 @@ const assertArraysEqual = (arr1, arr2) => {
 
 // Find the middle elements if array has even length
 const getMiddleElementsForEvenArray = (arr, midPoint) => {
+  // return the element at the index of the midpoint and the element at the index just before
   return [arr[midPoint - 1], arr[midPoint]];
 };
 
 // Find the middle element if array has odd length
 const getMiddleElementForOddArray = (arr, midPoint) => {
+  // return the element at the index of the midpoint
   return [arr[midPoint]];
 };
 
