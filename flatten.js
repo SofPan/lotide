@@ -18,12 +18,10 @@ const assertArraysEqual = (arr1, arr2) => {
 
 // A function that takes an array as argument and re-modulates it into a single array
 const flatten = (arr) => {
-  const flatArray = [];
+  let flatArray = [];
   for (const elem of arr) {
     if (Array.isArray(elem)) {
-      for (const el of elem) {
-        flatArray.push(el);
-      }
+      flatArray = flatArray.concat(elem);
     } else {
       flatArray.push(elem);
     }
