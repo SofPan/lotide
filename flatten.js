@@ -17,20 +17,6 @@ const assertArraysEqual = (arr1, arr2) => {
 };
 
 // A function that takes an array as argument and re-modulates it into a single array
-/*
-  Flatten function:
-    Const flatArray = empty array
-    Loop for each element in the input array:
-      if the element is an array:
-        Loop for each element in this array:
-          push element into flat array
-        End loop
-      Otherwise
-        push element into flat array
-    End loop
-    Return flatArray
-  End function
-*/
 const flatten = (arr) => {
   const flatArray = [];
   for (const elem of arr) {
