@@ -22,7 +22,9 @@ const without = (arr1, arr2) => {
 
   for (const elem of arr1) {
     // if the second array does not include the current element, it should be kept as part of the filtered array
-    !arr2.includes(elem) ? filteredArray.push(elem) : "";
+    if (!arr2.includes(elem)) {
+      filteredArray.push(elem);
+    }
   }
 
   return filteredArray;
