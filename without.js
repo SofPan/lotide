@@ -18,9 +18,14 @@ const assertArraysEqual = (arr1, arr2) => {
 
 // A function that takes two arrays as arguments and removes the elements in the second array from the first array, then returns the newly made array
 const without = (arr1, arr2) => {
-  return arr1.filter((x) => {
-    return !arr2.includes(x);
-  });
+  const filteredArray = [];
+
+  for (const elem of arr1) {
+    // if the second array does not include the current element, it should be kept as part of the filtered array
+    !arr2.includes(elem) ? filteredArray.push(elem) : "";
+  }
+
+  return filteredArray;
 };
 
 // TESTS
@@ -36,7 +41,7 @@ const allButOne = without([1, 2, 3, 4, 5], [1, 2, 3, 4]); // => [5]
 // Test the original array is not modified
 const originalArray = ["a", "b", "c"];
 without(originalArray, ["b"]);
-console.log("original array: ", originalArray); // => originalArray unmodified
+assertArraysEqual(originalArray, ["a", "b", "c"]); // => should PASS
 
 // Testing assertions
 assertArraysEqual(first, [2, 3]);
