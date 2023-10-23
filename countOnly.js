@@ -13,8 +13,10 @@ const countOnly = (allItems, itemsToCount) => {
   const results = {};
 
   for (const item of allItems) {
-    console.log(item);
+    // if the key does not exist, create and set value to 1, otherwise increment value by 1
+    !results[item] ? results[item] = 1 : results[item] += 1;
   }
+  console.log(results);
 
   return results;
 };
