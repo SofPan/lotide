@@ -19,7 +19,6 @@ const countOnly = (allItems, itemsToCount) => {
       !results[item] ? results[item] = 1 : results[item] += 1;
     }
   }
-  console.log(results);
 
   return results;
 };
