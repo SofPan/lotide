@@ -16,7 +16,11 @@ const countOnly = (allItems, itemsToCount) => {
     // Check if the current item exists in the itemsToCount object
     if (itemsToCount[item]) {
       // if the key does not exist, create and set value to 1, otherwise increment value by 1
-      !results[item] ? results[item] = 1 : results[item] += 1;
+      if (!results[item]) {
+        results[item] = 1;
+      } else {
+        results[item] += 1;
+      }
     }
   }
 
