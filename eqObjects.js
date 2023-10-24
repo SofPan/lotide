@@ -36,7 +36,6 @@ const eqObjects = (obj1, obj2) => {
     if (Array.isArray(obj1[key])) {
       // if the compared arrays do not match, return false
       if (!eqArrays(obj1[key], obj2[key])) {
-        console.log(obj1[key], "is an array but does not match", obj2[key]);
         return false;
       }
     }
