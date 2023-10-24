@@ -1,9 +1,3 @@
-// This function compares two arguments and outputs if they are equal or not
-const assertEqual = (actual, expected) => {
-  console.log(actual === expected ? `💅 Assertion passed: ${actual} === ${expected}`
-    : `💔 Assertion failed: ${actual} !== ${expected}`);
-};
-
 // A function that takes two arrays as arguments and compares if they are a perfect match
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
@@ -32,8 +26,7 @@ const eqObjects = (obj1, obj2) => {
       if (!eqArrays(obj1[key], obj2[key])) {
         return false;
       }
-    }
-    if (!Array.isArray(obj1[key]) && obj1[key] !== obj2[key]) {
+    } else if (obj1[key] !== obj2[key]) {
       return false;
     }
   }
@@ -47,6 +40,7 @@ const eqObjects = (obj1, obj2) => {
  * @print pass/fail message
  */
 
+// prints pass/fail depending on equality of two objects
 const assertObjectsEqual = (actual, expected) => {
   const inspect = require('util').inspect;
   console.log(eqObjects(actual, expected) ? `💅 Assertion passed: ${inspect(actual)} === ${inspect(expected)}` : `💔 Assertion failed: ${inspect(actual)} !== ${inspect(expected)}`);
