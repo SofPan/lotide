@@ -10,7 +10,18 @@ const assertEqual = (actual, expected) => {
  * @returns an object with a count of each letter
 */
 const countLetters = (sentence) => {
-
+  const result = {};
+  for (const letter of sentence) {
+    // if the letter exists (not a space)
+    if (letter) {
+      if (!result[letter]) {
+        result[letter] = 1;
+      } else {
+        result[letter] += 1;
+      }
+    }
+  }
+  return result;
 };
 
 // TESTS
