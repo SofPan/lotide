@@ -24,10 +24,26 @@ const assertArraysEqual = (arr1, arr2) => {
 
 const letterPositions = (sentence) => {
   const results = {};
+  if (sentence.trim().length === 0) {
+    return [];
+  }
   for (let i = 0; i < sentence.length; i++) {
-    console.log(sentence[i]);
+    if (sentence[i] !== " ") {
+      if (!results[sentence[i]]) {
+        results[sentence[i]] = [i];
+      } else {
+        results[sentence[i]].push(i);
+      }
+    }
   }
   return results;
 };
 
-console.log(letterPositions("hello"));
+// TESTS
+assertArraysEqual(letterPositions("hello")["l"], [2, 3]);
+
+// correct index with space
+assertArraysEqual(letterPositions("hello there")["t"], [6]);
+
+// empty string returns empty array
+assertArraysEqual(letterPositions(" "), []);
