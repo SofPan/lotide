@@ -24,12 +24,13 @@ const assertArraysEqual = (arr1, arr2) => {
 
 const letterPositions = (sentence) => {
   const results = {};
-  for (let i = 0; i < sentence.length; i++) {
-    if (sentence[i] !== " ") {
-      if (!results[sentence[i]]) {
-        results[sentence[i]] = [i];
+  const lowerCaseSentence = sentence.toLowerCase();
+  for (let i = 0; i < lowerCaseSentence.length; i++) {
+    if (lowerCaseSentence[i] !== " ") {
+      if (!results[lowerCaseSentence[i]]) {
+        results[lowerCaseSentence[i]] = [i];
       } else {
-        results[sentence[i]].push(i);
+        results[lowerCaseSentence[i]].push(i);
       }
     }
   }
@@ -44,6 +45,12 @@ assertArraysEqual(letterPositions("hello there")["t"], [6]);
 
 // correct index with multiple spaces
 assertArraysEqual(letterPositions("hello there friend")["e"], [1, 8, 10, 15]);
+
+// punctuation is ignored
+assertArraysEqual(letterPositions("Hello there! General Kenobi!")["n"], [15, 23]);
+
+// no capital letters
+assertArraysEqual(letterPositions("Hello there! General Kenobi!")["g"], [13]);
 
 // empty string returns empty array
 assertArraysEqual(letterPositions(" "), {});
