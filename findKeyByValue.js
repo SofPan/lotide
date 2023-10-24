@@ -17,7 +17,6 @@ const findKeyByValue = (compareObject, compareValue) => {
       return key;
     }
   }
-  return undefined;
 };
 
 //TESTS
