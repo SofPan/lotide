@@ -42,5 +42,8 @@ assertArraysEqual(letterPositions("hello")["l"], [2, 3]);
 // correct index with space
 assertArraysEqual(letterPositions("hello there")["t"], [6]);
 
+// correct index with multiple spaces
+assertArraysEqual(letterPositions("hello there friend")["e"], [1, 8, 10, 15]);
+
 // empty string returns empty array
 assertArraysEqual(letterPositions(" "), {});
