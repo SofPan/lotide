@@ -26,8 +26,8 @@ const letterPositions = (sentence) => {
   const results = {};
   const lowerCaseSentence = sentence.toLowerCase();
   for (let i = 0; i < lowerCaseSentence.length; i++) {
-    // if character is not a space and is not punctuation, add to results object
-    if (lowerCaseSentence[i] !== " " && /[.,?!]/.test(lowerCaseSentence[i]) === false) {
+    // if character is a letter, add to results
+    if (/[a-z]/.test(lowerCaseSentence[i])) {
       if (!results[lowerCaseSentence[i]]) {
         results[lowerCaseSentence[i]] = [i];
       } else {
