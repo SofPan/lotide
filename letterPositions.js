@@ -24,6 +24,7 @@ const assertArraysEqual = (arr1, arr2) => {
 
 const letterPositions = (sentence) => {
   const results = {};
+  // trim to remove empty spaces and check if there are anything characters left
   if (sentence.trim().length === 0) {
     return [];
   }
