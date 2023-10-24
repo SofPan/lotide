@@ -12,7 +12,10 @@ const assertEqual = (actual, expected) => {
  */
 
 const eqObjects = (obj1, obj2) => {
-
+  // test that each object has the same number of keys
+  if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+    return false;
+  }
 };
 
 // TESTS
