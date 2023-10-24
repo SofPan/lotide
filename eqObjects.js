@@ -4,6 +4,19 @@ const assertEqual = (actual, expected) => {
     : `💔 Assertion failed: ${actual} !== ${expected}`);
 };
 
+// A function that takes two arrays as arguments and compares if they are a perfect match
+const eqArrays = (arr1, arr2) => {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+};
+
 /**
  * @function eqObjects a function that compares two objects for equality
  * @param obj1
@@ -19,7 +32,15 @@ const eqObjects = (obj1, obj2) => {
 
   // compare the values of each key match for both objects
   for (const key in obj1) {
-    if (obj1[key] !== obj2[key]) {
+    // if the value is an array, compare arrays
+    if (Array.isArray(obj1[key])) {
+      // if the compared arrays do not match, return false
+      if (!eqArrays(obj1[key], obj2[key])) {
+        console.log(obj1[key], "is an array but does not match", obj2[key]);
+        return false;
+      }
+    }
+    if (!Array.isArray(obj1[key]) && obj1[key] !== obj2[key]) {
       return false;
     }
   }
@@ -35,3 +56,13 @@ assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
 
 assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
+
+// test for array values
+const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
+const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
+
+assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
+
+const longSleeveMultiColorShirtObject = { colors: ["red", "blue"], size: "medium", sleeveLength: "long" };
+
+assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
