@@ -24,5 +24,17 @@ const assertArraysEqual = (arr1, arr2) => {
  */
 
 const findKey = (object, callback) => {
+  for (const key in object) {
+    console.log(key, object[key]);
+  }
 
 };
+
+// Tests
+const myDog = {
+  name: "Kane",
+  breed: "GSD",
+  barks: "very loudly",
+};
+
+findKey(myDog, dog => dog);
