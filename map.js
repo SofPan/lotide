@@ -16,7 +16,9 @@ const assertArraysEqual = (arr1, arr2) => {
   console.log(eqArrays(arr1, arr2) ? `💅 Assertion passed: ${arr1} === ${arr2}` : `💔 Assertion failed: ${arr1} !== ${arr2}`);
 };
 
-// A function that takes in an array and a callback function, and outputs a new modified array
+// A function that takes in an array and a callback function as arguments
+// It applies a callback function to each element of the array
+// and returns a new array with the results
 const map = (array, callback) => {
   const result = [];
 
