@@ -36,7 +36,7 @@ const takeUntil = (array, callback) => {
       result.push(item);
     }
   }
-  return array;
+  return result;
 };
 
 // TESTS
