@@ -1,5 +1,6 @@
 const map = () => {
-
+  const result = [];
+  return result;
 };
 
 const words = ["kane", "the", "german", "shepherd", "doggy"];
