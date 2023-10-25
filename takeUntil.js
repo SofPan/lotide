@@ -23,22 +23,38 @@ const assertArraysEqual = (arr1, arr2) => {
  * @returns a slice of the array with elements taken from the beginning until the callback output
  */
 
+// A function that takes two arguments, an array and a callback
+// Adds the array elements to the result array until the callback condition returns true
+// If the callback condition is not met, return the entire array
 const takeUntil = (array, callback) => {
   const result = [];
   for (const item of array) {
-    console.log("item before :", item);
-    console.log("item after :", callback(item));
+    // if the callback condition returns true, return result array
+    if (callback(item)) {
+      return result;
+    } else {
+      result.push(item);
+    }
   }
-  return result;
+  return array;
 };
 
 // TESTS
+// test numbers
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
 console.log(results1);
 
 console.log('---');
 
+// Test strings
 const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
 const results2 = takeUntil(data2, x => x === ',');
 console.log(results2);
+
+console.log('---');
+
+// Test callback condition is never met
+const data3 = [1, 2, 3, 4, 5];
+const results3 = takeUntil(data3, x => x < 0);
+console.log(results3);
