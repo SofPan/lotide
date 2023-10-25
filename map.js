@@ -1,5 +1,9 @@
-const map = () => {
+const map = (array, callback) => {
   const result = [];
+
+  console.log("array :", array);
+  console.log("callback :", callback);
+
   return result;
 };
 
