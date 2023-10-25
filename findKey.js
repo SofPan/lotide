@@ -1,19 +1,7 @@
-// A function that takes two arrays as arguments and compares if they are a perfect match
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-// A function that prints the result of eqArrays to the console
-const assertArraysEqual = (arr1, arr2) => {
-  console.log(eqArrays(arr1, arr2) ? `💅 Assertion passed: ${arr1} === ${arr2}` : `💔 Assertion failed: ${arr1} !== ${arr2}`);
+// This function compares two arguments and outputs if they are equal or not
+const assertEqual = (actual, expected) => {
+  console.log(actual === expected ? `💅 Assertion passed: ${actual} === ${expected}`
+    : `💔 Assertion failed: ${actual} !== ${expected}`);
 };
 
 /**
@@ -25,16 +13,21 @@ const assertArraysEqual = (arr1, arr2) => {
 
 const findKey = (object, callback) => {
   for (const key in object) {
-    console.log(key, object[key]);
+    if (callback(object[key])) {
+      return key;
+    }
   }
 
 };
 
 // Tests
-const myDog = {
-  name: "Kane",
-  breed: "GSD",
-  barks: "very loudly",
-};
+const object1 = findKey({
+  "Blue Hill": { stars: 1 },
+  "Akaleri": { stars: 3 },
+  "noma": { stars: 2 },
+  "elBulli": { stars: 3 },
+  "Ora": { stars: 2 },
+  "Akelarre": { stars: 3 }
+}, x => x.stars === 2); // => "noma"
 
-findKey(myDog, dog => dog);
+assertEqual(object1, "noma");
