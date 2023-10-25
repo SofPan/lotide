@@ -1,8 +1,9 @@
 const map = (array, callback) => {
   const result = [];
 
-  console.log("array :", array);
-  console.log("callback :", callback);
+  for (let item of array) {
+    result.push(callback(item));
+  }
 
   return result;
 };
