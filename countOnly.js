@@ -1,8 +1,4 @@
-// This function compares two arguments and outputs if they are equal or not
-const assertEqual = (actual, expected) => {
-  console.log(actual === expected ? `💅 Assertion passed: ${actual} === ${expected}`
-    : `💔 Assertion failed: ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual');
 
 /**
   * A function that takes in a collection of items and returns a count for a specific subset of those items
@@ -46,6 +42,8 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
+
+module.exports = countOnly;
 
 
 

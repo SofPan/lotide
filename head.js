@@ -1,8 +1,4 @@
-// This function compares two arguments and outputs if they are equal or not
-const assertEqual = (actual, expected) => {
-  console.log(actual === expected ? `💅 Assertion passed: ${actual} === ${expected}`
-    : `💔 Assertion failed: ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual');
 
 // This function returns the first element of an array;
 const head = (arr) => {
@@ -17,3 +13,5 @@ assertEqual(head(["one", "two", "three"]), "two");
 assertEqual(head([1]), 1);
 assertEqual(head([]), undefined);
 assertEqual(head([]), "something");
+
+module.exports = head;

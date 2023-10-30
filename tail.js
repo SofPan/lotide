@@ -1,8 +1,4 @@
-// This function compares two arguments and outputs if they are equal or not
-const assertEqual = (actual, expected) => {
-  console.log(actual === expected ? `💅 Assertion passed: ${actual} === ${expected}`
-    : `💔 Assertion failed: ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual');
 
 // This function returns every element in an array except the head
 const tail = (arr) => {
@@ -33,3 +29,4 @@ assertEqual(tail(words)[0], "word");
 // Test that the array not too long
 assertEqual(tail(words).length, 3);
 
+module.exports = tail;

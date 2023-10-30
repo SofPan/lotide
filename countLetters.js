@@ -1,8 +1,4 @@
-// This function compares two arguments and outputs if they are equal or not
-const assertEqual = (actual, expected) => {
-  console.log(actual === expected ? `💅 Assertion passed: ${actual} === ${expected}`
-    : `💔 Assertion failed: ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual');
 
 /**
  * @function countLetters A function that takes in a string and returns a count of each letter in that string
@@ -38,3 +34,5 @@ assertEqual(resultWithSpace[" "], undefined);
 const onlySpace = "     ";
 const resultOnlySpace = countLetters(onlySpace);
 assertEqual(resultOnlySpace[" "], undefined);
+
+module.exports = countLetters;

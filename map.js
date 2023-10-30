@@ -1,20 +1,4 @@
-// A function that takes two arrays as arguments and compares if they are a perfect match
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-// A function that prints the result of eqArrays to the console
-const assertArraysEqual = (arr1, arr2) => {
-  console.log(eqArrays(arr1, arr2) ? `💅 Assertion passed: ${arr1} === ${arr2}` : `💔 Assertion failed: ${arr1} !== ${arr2}`);
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 // A function that takes in an array and a callback function as arguments
 // It applies a callback function to each element of the array
@@ -51,3 +35,5 @@ const moreWords = ["pig", "latin", "is", "silly"];
 const pigLatin = map(moreWords, word => word.slice(1) + word[0] + "ay");
 
 assertArraysEqual(pigLatin, ["igpay", "atinlay", "siay", "illysay"]);
+
+module.exports = map;

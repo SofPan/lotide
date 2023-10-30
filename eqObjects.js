@@ -1,21 +1,5 @@
-// This function compares two arguments and outputs if they are equal or not
-const assertEqual = (actual, expected) => {
-  console.log(actual === expected ? `💅 Assertion passed: ${actual} === ${expected}`
-    : `💔 Assertion failed: ${actual} !== ${expected}`);
-};
-
-// A function that takes two arrays as arguments and compares if they are a perfect match
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
 /**
  * @function eqObjects a function that compares two objects for equality
@@ -65,3 +49,5 @@ assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true
 const longSleeveMultiColorShirtObject = { colors: ["red", "blue"], size: "medium", sleeveLength: "long" };
 
 assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
+
+module.exports = eqObjects;

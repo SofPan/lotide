@@ -1,8 +1,4 @@
-// This function compares two arguments and outputs if they are equal or not
-const assertEqual = (actual, expected) => {
-  console.log(actual === expected ? `💅 Assertion passed: ${actual} === ${expected}`
-    : `💔 Assertion failed: ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual');
 
 /**
  * @function findKey takes two arguments, an object and a callback
@@ -42,4 +38,4 @@ const object2 = findKey({
 }, x => x.color === "black and tan");
 assertEqual(object2, undefined);
 
-
+module.exports = findKey;

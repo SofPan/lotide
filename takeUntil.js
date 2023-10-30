@@ -1,20 +1,4 @@
-// A function that takes two arrays as arguments and compares if they are a perfect match
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-// A function that prints the result of eqArrays to the console
-const assertArraysEqual = (arr1, arr2) => {
-  console.log(eqArrays(arr1, arr2) ? `💅 Assertion passed: ${arr1} === ${arr2}` : `💔 Assertion failed: ${arr1} !== ${arr2}`);
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 /**
  * @function takeUntil takes two arguments, an array and a callback function
@@ -58,3 +42,5 @@ console.log('---');
 const data3 = [1, 2, 3, 4, 5];
 const results3 = takeUntil(data3, x => x < 0);
 assertArraysEqual(results3, data3);
+
+module.exports = takeUntil;

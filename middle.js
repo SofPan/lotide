@@ -1,20 +1,4 @@
-// A function that takes two arrays as arguments and compares if they are a perfect match
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-// A function that prints the result of eqArrays to the console
-const assertArraysEqual = (arr1, arr2) => {
-  console.log(eqArrays(arr1, arr2) ? `💅 Assertion passed: ${arr1} === ${arr2}` : `💔 Assertion failed: ${arr1} !== ${arr2}`);
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 // Find the middle elements if array has even length
 const getMiddleElementsForEvenArray = (arr, midPoint) => {
@@ -51,3 +35,5 @@ assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
 // Even
 assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
 assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+
+module.exports = middle;

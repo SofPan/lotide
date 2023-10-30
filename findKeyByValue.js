@@ -1,8 +1,4 @@
-// This function compares two arguments and outputs if they are equal or not
-const assertEqual = (actual, expected) => {
-  console.log(actual === expected ? `💅 Assertion passed: ${actual} === ${expected}`
-    : `💔 Assertion failed: ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual');
 
 /**
  * @function findKeyByValue takes in an object and a value and outputs the matching key
@@ -44,3 +40,5 @@ const multipleMatchingValues = {
 };
 
 assertEqual(findKeyByValue(multipleMatchingValues, "yes"), "isAMatch");
+
+module.exports = findKeyByValue;

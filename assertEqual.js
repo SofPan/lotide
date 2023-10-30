@@ -11,3 +11,5 @@ assertEqual("Sofia Panchaud", "Sofia Panchaud");
 assertEqual("SOFIA", "Sofia");
 assertEqual(1 + 1, 2);
 assertEqual(20 + 5, 100);
+
+module.exports = assertEqual;
