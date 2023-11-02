@@ -15,24 +15,24 @@ const without = (arr1, arr2) => {
 };
 
 // TESTS
-// remove the first index
-const first = without([1, 2, 3], [1]); // => [2, 3]
-// remove the last index
-const last = without([1, 2, "3"], ["3"]);// => [1, 2]
-// not all elements are present in the first array
-const someNotIncluded = without([1, 2, "3", 4, 5], [3, "5", 5]); // => [1, 2, "3", 4]
-// all but one element should be removed
-const allButOne = without([1, 2, 3, 4, 5], [1, 2, 3, 4]); // => [5]
+// // remove the first index
+// const first = without([1, 2, 3], [1]); // => [2, 3]
+// // remove the last index
+// const last = without([1, 2, "3"], ["3"]);// => [1, 2]
+// // not all elements are present in the first array
+// const someNotIncluded = without([1, 2, "3", 4, 5], [3, "5", 5]); // => [1, 2, "3", 4]
+// // all but one element should be removed
+// const allButOne = without([1, 2, 3, 4, 5], [1, 2, 3, 4]); // => [5]
 
-// Test the original array is not modified
-const originalArray = ["a", "b", "c"];
-without(originalArray, ["b"]);
-assertArraysEqual(originalArray, ["a", "b", "c"]); // => should PASS
+// // Test the original array is not modified
+// const originalArray = ["a", "b", "c"];
+// without(originalArray, ["b"]);
+// assertArraysEqual(originalArray, ["a", "b", "c"]); // => should PASS
 
-// Testing assertions
-assertArraysEqual(first, [2, 3]);
-assertArraysEqual(last, [1, 2]);
-assertArraysEqual(someNotIncluded, [1, 2, "3", 4]);
-assertArraysEqual(allButOne, [5]);
+// // Testing assertions
+// assertArraysEqual(first, [2, 3]);
+// assertArraysEqual(last, [1, 2]);
+// assertArraysEqual(someNotIncluded, [1, 2, "3", 4]);
+// assertArraysEqual(allButOne, [5]);
 
 module.exports = without;

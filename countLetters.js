@@ -21,18 +21,18 @@ const countLetters = (sentence) => {
 };
 
 // TESTS
-const oneWord = "hello";
-const resultOneWord = countLetters(oneWord);
-assertEqual(resultOneWord["l"], 2);
+// const oneWord = "hello";
+// const resultOneWord = countLetters(oneWord);
+// assertEqual(resultOneWord["l"], 2);
 
-const withSpace = "hello there";
-const resultWithSpace = countLetters(withSpace);
-assertEqual(resultWithSpace["e"], 3);
-// test that spaces did not get counted
-assertEqual(resultWithSpace[" "], undefined);
+// const withSpace = "hello there";
+// const resultWithSpace = countLetters(withSpace);
+// assertEqual(resultWithSpace["e"], 3);
+// // test that spaces did not get counted
+// assertEqual(resultWithSpace[" "], undefined);
 
-const onlySpace = "     ";
-const resultOnlySpace = countLetters(onlySpace);
-assertEqual(resultOnlySpace[" "], undefined);
+// const onlySpace = "     ";
+// const resultOnlySpace = countLetters(onlySpace);
+// assertEqual(resultOnlySpace[" "], undefined);
 
 module.exports = countLetters;

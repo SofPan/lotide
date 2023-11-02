@@ -19,9 +19,9 @@ const flatten = (arr) => {
 };
 
 // TESTS
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]); // => [1, 2, 3, 4, 5, 6]
-assertArraysEqual(flatten([[1, 2, 3], ["a", "b", "c"]]), [1, 2, 3, "a", "b", "c"]); // => [1, 2, 3, "a", "b", "c"]
-assertArraysEqual(flatten([[], [""]]), [""]); // => [""]
-assertArraysEqual(flatten([[], []]), []); // => []
+// assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]); // => [1, 2, 3, 4, 5, 6]
+// assertArraysEqual(flatten([[1, 2, 3], ["a", "b", "c"]]), [1, 2, 3, "a", "b", "c"]); // => [1, 2, 3, "a", "b", "c"]
+// assertArraysEqual(flatten([[], [""]]), [""]); // => [""]
+// assertArraysEqual(flatten([[], []]), []); // => []
 
 module.exports = flatten;

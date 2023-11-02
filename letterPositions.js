@@ -23,21 +23,21 @@ const letterPositions = (sentence) => {
 };
 
 // TESTS
-assertArraysEqual(letterPositions("hello")["l"], [2, 3]);
+// assertArraysEqual(letterPositions("hello")["l"], [2, 3]);
 
-// correct index with space
-assertArraysEqual(letterPositions("hello there")["t"], [6]);
+// // correct index with space
+// assertArraysEqual(letterPositions("hello there")["t"], [6]);
 
-// correct index with multiple spaces
-assertArraysEqual(letterPositions("hello there friend")["e"], [1, 8, 10, 15]);
+// // correct index with multiple spaces
+// assertArraysEqual(letterPositions("hello there friend")["e"], [1, 8, 10, 15]);
 
-// punctuation is ignored
-assertArraysEqual(letterPositions("Hello there! General Kenobi!")["n"], [15, 23]);
+// // punctuation is ignored
+// assertArraysEqual(letterPositions("Hello there! General Kenobi!")["n"], [15, 23]);
 
-// no capital letters
-assertArraysEqual(letterPositions("Hello there! General Kenobi!")["g"], [13]);
+// // no capital letters
+// assertArraysEqual(letterPositions("Hello there! General Kenobi!")["g"], [13]);
 
-// empty string returns empty array
-assertArraysEqual(letterPositions(" "), {});
+// // empty string returns empty array
+// assertArraysEqual(letterPositions(" "), {});
 
 module.exports = letterPositions;

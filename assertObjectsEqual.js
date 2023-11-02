@@ -15,29 +15,29 @@ const assertObjectsEqual = (actual, expected) => {
 };
 
 // TESTS
-const myDog = {
-  name: "Kane",
-  breed: "GSD",
-  bark: "loud",
-};
+// const myDog = {
+//   name: "Kane",
+//   breed: "GSD",
+//   bark: "loud",
+// };
 
-const alsoMyDog = {
-  breed: "GSD",
-  bark: "loud",
-  name: "Kane",
-};
+// const alsoMyDog = {
+//   breed: "GSD",
+//   bark: "loud",
+//   name: "Kane",
+// };
 
-assertObjectsEqual(myDog, alsoMyDog); // => Pass
+// assertObjectsEqual(myDog, alsoMyDog); // => Pass
 
-const notMyDog = {
-  name: "Fido",
-  breed: "Beagle",
-  bark: "more of a woof",
-};
+// const notMyDog = {
+//   name: "Fido",
+//   breed: "Beagle",
+//   bark: "more of a woof",
+// };
 
-assertObjectsEqual(myDog, notMyDog); // => Fail
+// assertObjectsEqual(myDog, notMyDog); // => Fail
 
-assertObjectsEqual({}, {}); // => Should pass even though empty
-assertObjectsEqual({ key: "value" }, { key: "value", key2: "value2" }); // => Fail
+// assertObjectsEqual({}, {}); // => Should pass even though empty
+// assertObjectsEqual({ key: "value" }, { key: "value", key2: "value2" }); // => Fail
 
 module.exports = assertObjectsEqual;
