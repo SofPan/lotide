@@ -4,30 +4,26 @@ const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false;
   }
+
+  let result = false;
   for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
+    if (!Array.isArray(arr1[i])) {
+      if (arr1[i] !== arr2[i]) {
+        result = false;
+      } else {
+        result = true;
+      }
+    } else {
+      result = eqArrays(arr1[i], arr2[i]);
     }
   }
-  return true;
+  return result;
 };
 
 
 // TESTS
-// eqArrays([1, 2, 3], [1, 2, 3]); // => true
-// eqArrays([1, 2, 3], [3, 2, 1]); // => false
-// eqArrays(["1", "2", "3"], ["1", "2", "3"]); // => true
-// eqArrays(["1", "2", "3"], ["1", "2", 3]); // => false
-// eqArrays([], []); // => true
-// eqArrays([], [""]); // => false
-
-// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-// assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => should FAIL
-// assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => should PASS
-// assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => should PASS
-// assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => should FAIL
-// assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // => should PASS
-// assertEqual(eqArrays([], []), true); // => should PASS
-// assertEqual(eqArrays([], [""]), false); // => should PASS
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true);
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);
 
 module.exports = eqArrays;
