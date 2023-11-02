@@ -17,20 +17,28 @@ const eqObjects = (obj1, obj2) => {
 
   // compare the values of each key match for both objects
   for (const key in obj1) {
-    // if the value is an array, compare arrays
-    if (Array.isArray(obj1[key])) {
-      // if the compared arrays do not match, return false
-      if (!eqArrays(obj1[key], obj2[key])) {
-        return false;
-      }
+    // if the value is an object, recursion occurs
+    if (typeof obj1[key] === 'object' && typeof obj2[key] === 'object') {
+      // TODO: Test Arrays in objects
+      // if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
+      //   return eqArrays(obj1[key], obj2[key]);
+      // }
+      return eqObjects(obj1[key], obj2[key]);
+
     } else if (obj1[key] !== obj2[key]) {
       return false;
     }
   }
   return true;
 };
+// NEW TESTS
+console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => true
 
-// TESTS
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => false
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })); // => false
+
+module.exports = eqObjects;
+// OLD TESTS
 // const shirtObject = { color: "red", size: "medium" };
 // const anotherShirtObject = { size: "medium", color: "red" };
 
@@ -50,10 +58,3 @@ const eqObjects = (obj1, obj2) => {
 
 // assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
 
-module.exports = eqObjects;
-
-// NEW CALLS
-eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => true
-
-eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => false
-eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }); // => false
