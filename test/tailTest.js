@@ -11,19 +11,19 @@ describe("#tail", () => {
   });
   it("does not alter the original array", () => {
     tail(words);
-    assert.equal(words.length, 3);
+    assert.strictEqual(words.length, 3);
   });
   it("returns 'wordy' as the first element in the new array", () => {
-    assert.equal("wordy", tail(words)[0]);
+    assert.strictEqual("wordy", tail(words)[0]);
   });
   it("returns 'wordiest' as the second element of the new array", () => {
-    assert.equal("wordiest", tail(words)[1]);
+    assert.strictEqual("wordiest", tail(words)[1]);
   });
   it("returns an empty array when passed an empty array", () => {
-    assert.equal(0, tail(empty).length);
+    assert.strictEqual(0, tail(empty).length);
   });
   it("returns an empty array when there is only one element in an array to start", () => {
-    assert.equal(0, tail(oneElement).length);
+    assert.strictEqual(0, tail(oneElement).length);
   });
   it("returns a matching array of elements", () => {
     assert.deepStrictEqual(["wordy", "wordiest"], tail(words));
