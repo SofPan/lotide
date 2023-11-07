@@ -1,4 +1,3 @@
-const assertEqual = require('./assertEqual');
 const eqArrays = require('./eqArrays');
 
 /**
@@ -30,15 +29,5 @@ const eqObjects = (obj1, obj2) => {
   }
   return true;
 };
-
-// NEW TESTS
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
-
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
-// test for Arrays
-assertEqual(eqObjects({ a: [1, 2], b: 0 }, { a: [1, 2], b: 0 }), true);
-
-assertEqual(eqObjects({ a: [1, 2], b: 0 }, { a: [1, 2, 3], b: 0 }), false);
 
 module.exports = eqObjects;
