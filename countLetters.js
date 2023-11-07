@@ -1,5 +1,5 @@
 /**
- * @function countLetters A function that takes in a string and returns a count of each letter in that string
+ * @function countLetters A function that takes in a string and returns the total of each letter in that string
  * @param sentence a string with spaces
  * @returns an object with a count of each letter
 */

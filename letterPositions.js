@@ -1,5 +1,5 @@
 /**
- * @function letterPositions
+ * @function letterPositions takes in a string and returns the indexed positions of each occurrence of each letter in the string
  * @param sentence a string
  * @returns the indexed positions of each occurrence of each letter in the string
 */

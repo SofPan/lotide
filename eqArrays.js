@@ -1,4 +1,4 @@
-// Takes two arrays and compares if they are a perfect match
+// compares two arrays for equality
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false;

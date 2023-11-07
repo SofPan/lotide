@@ -10,7 +10,7 @@ const getMiddleElementForOddArray = (arr, midPoint) => {
   return [arr[midPoint]];
 };
 
-// Returns the middle element(s) of an array as a new array
+// takes an array and returns the middle element(s) as a new array
 const middle = (arr) => {
   const midPoint = Math.floor(arr.length / 2);
   if (arr.length < 3) {

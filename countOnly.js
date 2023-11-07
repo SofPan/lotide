@@ -1,5 +1,5 @@
 /**
-  * @function countOnly takes a collection of items and returns a count for a specific subset of those items
+  * @function countOnly takes an array of strings and an object of items to count, then returns the total for the specified subset of those items
   * @param allItems an array of strings
   * @param itemsToCount an object for a subset of items to be counted
 */

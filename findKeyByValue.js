@@ -1,5 +1,5 @@
 /**
- * @function findKeyByValue takes in an object and a value and outputs the matching key
+ * @function findKeyByValue takes in an object and a value and returns the matching key
  * @param compareObject an object to be iterated over
  * @param compareValue a value to be compared against
  * @returns the key associated with compareValue or undefined

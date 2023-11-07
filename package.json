@@ -1,15 +1,15 @@
 {
-  "name": "lotide",
+  "name": "@sofpan/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "A mini clone of the Lodash Library",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
+  "author": "Sofia Panchaud (https://github.com/SofPan/lotide)",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.3.10",

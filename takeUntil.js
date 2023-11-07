@@ -1,5 +1,5 @@
 /**
- * @function takeUntil takes two arguments, an array and a callback function
+ * @function takeUntil takes an array and a callback and returns a new array with elements taken from the beginning until the callback condition is met, or the entire array if the condition is never met
  * @param array an array of any kind of items
  * @param callback an anonymous callback function
  * @returns a slice of the array with elements taken from the beginning until the callback output, or the entire array if the callback condition is not met

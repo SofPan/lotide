@@ -1,4 +1,4 @@
-// Takes two arrays as arguments and filters out the elements in the second array from the first array, then returns a new array
+// Takes two arrays and filters out the elements in the second array from the first array, then returns a new array
 const without = (arr1, arr2) => {
   const filteredArray = [];
 

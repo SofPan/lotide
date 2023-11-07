@@ -1,4 +1,4 @@
-// Takes an array of mixed elements and nested arrays as argument and re-modulates it into a single array
+// Takes an array of mixed elements and nested arrays as argument and returns it as a single flattened array
 
 const flatten = (arr) => {
   let flatArray = [];
